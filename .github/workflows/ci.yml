@@ -21,6 +21,23 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python -m pytest -v
 
+  # the deployed server only gets requirements.txt -> make sure the app starts with just that
+  api-production-install:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: |
+          uvicorn app.main:app --port 8000 &
+          sleep 8
+          curl --fail http://localhost:8000/api/health
+
   frontend:
     runs-on: ubuntu-latest
     defaults:

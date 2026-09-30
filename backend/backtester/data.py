@@ -15,7 +15,6 @@ used for the results in the README are saved in backend/data/.
 import os
 
 import pandas as pd
-import yfinance as yf
 
 from . import DATA_DIR, PANEL_CSV
 
@@ -26,6 +25,8 @@ CONTRACTS = ["X26", "Z26", "F27", "G27", "H27", "J27",
 
 
 def download_contract(code):
+    import yfinance as yf   # only needed for downloading, not by the API server
+
     ticker = f"BZ{code}.NYM"
     df = yf.download(ticker, period="60d", interval="1h",
                      progress=False, auto_adjust=False)
