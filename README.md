@@ -4,7 +4,7 @@ Backtesting calendar spread and butterfly strategies on hourly Brent crude futur
 
 **Short version:** the first backtest said mean reversion made **$72k** in seven weeks. After fixing execution timing, stale prices and parameter selection, it made $8k. That profit came only from illiquid back months, and it disappears at 2× trading costs. Momentum and an ML ranking model failed as well. The project ended up being more about *why backtests lie* than about finding a strategy.
 
-**Live app:** `https://<your-app>.vercel.app` · **API docs:** `https://<your-api>.onrender.com/docs`
+**Live app:** https://brent-spread-backtester.vercel.app · **API docs:** https://brent-spread-api.onrender.com/docs
 
 ![Equity curves](docs/images/equity_curves.png)
 
