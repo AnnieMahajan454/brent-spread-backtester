@@ -1,0 +1,4 @@
+strategy,naive,in-sample,walk-fwd OOS,OOS sharpe,OOS strict data,OOS 2x costs
+Mean reversion,72029.76,20939.92,8384.88,2.5,384.99,-13610.12
+Momentum,-1549.94,-965.04,-965.04,-1.0,1115.0,-3360.04
+ML ranking,20904.97,20604.96,10765.0,2.7,-11094.93,-4430.0

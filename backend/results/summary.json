@@ -1,0 +1,536 @@
+{
+  "data": {
+    "source": "Yahoo Finance hourly bars, NYMEX Brent Last Day Financial futures (BZ)",
+    "start": "2026-07-22 04:00:00+00:00",
+    "end": "2026-09-30 11:00:00+00:00",
+    "n_hours": 1125,
+    "contracts": [
+      "X26",
+      "Z26",
+      "F27",
+      "G27",
+      "H27",
+      "J27",
+      "K27",
+      "M27",
+      "N27",
+      "Q27",
+      "U27"
+    ],
+    "bars_per_contract": {
+      "X26": 1117,
+      "Z26": 1075,
+      "F27": 635,
+      "G27": 243,
+      "H27": 221,
+      "J27": 33,
+      "K27": 31,
+      "M27": 302,
+      "N27": 1,
+      "Q27": 1,
+      "U27": 4
+    },
+    "last_price": {
+      "X26": 103.32,
+      "Z26": 97.85,
+      "F27": 95.28,
+      "G27": 93.02,
+      "H27": 89.82,
+      "J27": 88.32,
+      "K27": 88.57,
+      "M27": 86.96,
+      "N27": 83.19,
+      "Q27": 82.22,
+      "U27": 80.98
+    },
+    "instruments": [
+      "X26-Z26",
+      "Z26-F27",
+      "F27-G27",
+      "G27-H27",
+      "X26/Z26/F27 fly",
+      "Z26/F27/G27 fly",
+      "F27/G27/H27 fly"
+    ],
+    "valid_hours": {
+      "X26-Z26": 1120,
+      "Z26-F27": 865,
+      "F27-G27": 400,
+      "G27-H27": 244,
+      "X26/Z26/F27 fly": 865,
+      "Z26/F27/G27 fly": 400,
+      "F27/G27/H27 fly": 234
+    },
+    "max_stale_hours": 2,
+    "exec_lag_hours": 1,
+    "slippage_ticks": {
+      "X26": 1,
+      "Z26": 1,
+      "F27": 2,
+      "G27": 2,
+      "H27": 2,
+      "other": 3
+    },
+    "fees_per_contract_usd": 2.5,
+    "test_start": "2026-08-14 17:00:00+00:00",
+    "test_end": "2026-09-30 11:00:00+00:00",
+    "n_folds": 7
+  },
+  "strategies": {
+    "Mean reversion": {
+      "naive": {
+        "net_pnl": 72029.76,
+        "gross_pnl": 83929.76,
+        "costs": 11900.0,
+        "contracts_traded": 952,
+        "sharpe": 10.77,
+        "max_drawdown": -4540.0,
+        "pct_days_positive": 76.9,
+        "n_days": 39
+      },
+      "in_sample": {
+        "net_pnl": 20939.92,
+        "gross_pnl": 38079.92,
+        "costs": 17140.0,
+        "contracts_traded": 948,
+        "sharpe": 4.91,
+        "max_drawdown": -4775.01,
+        "pct_days_positive": 46.2,
+        "n_days": 39
+      },
+      "out_of_sample": {
+        "net_pnl": 8384.88,
+        "gross_pnl": 30379.88,
+        "costs": 21995.0,
+        "contracts_traded": 1254,
+        "sharpe": 2.5,
+        "max_drawdown": -10330.1,
+        "pct_days_positive": 43.6,
+        "n_days": 39
+      },
+      "strict_data_out_of_sample": {
+        "net_pnl": 384.99,
+        "gross_pnl": 1149.99,
+        "costs": 765.0,
+        "contracts_traded": 46,
+        "sharpe": 0.17,
+        "max_drawdown": -4830.0,
+        "pct_days_positive": 41.0,
+        "n_days": 39
+      },
+      "per_instrument": {
+        "X26-Z26": {
+          "net_pnl": -7245.0,
+          "valid_hours": 1120
+        },
+        "Z26-F27": {
+          "net_pnl": -875.0,
+          "valid_hours": 865
+        },
+        "F27-G27": {
+          "net_pnl": 5209.97,
+          "valid_hours": 400
+        },
+        "G27-H27": {
+          "net_pnl": 4184.99,
+          "valid_hours": 244
+        },
+        "X26/Z26/F27 fly": {
+          "net_pnl": -1510.02,
+          "valid_hours": 865
+        },
+        "Z26/F27/G27 fly": {
+          "net_pnl": 1939.98,
+          "valid_hours": 400
+        },
+        "F27/G27/H27 fly": {
+          "net_pnl": 6679.97,
+          "valid_hours": 234
+        }
+      },
+      "net_pnl_by_cost_multiplier": {
+        "0.5": 19382.38,
+        "1": 8384.88,
+        "1.5": -2612.62,
+        "2": -13610.12,
+        "3": -35605.12
+      },
+      "hindsight_params": {
+        "lookback": 48,
+        "entry_z": 1.5,
+        "exit_z": 0.5
+      },
+      "walk_forward_choices": [
+        {
+          "test_start": "2026-08-14",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.0,
+            "exit_z": 0.5
+          },
+          "train_pnl": 7264.98
+        },
+        {
+          "test_start": "2026-08-23",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 10424.9
+        },
+        {
+          "test_start": "2026-08-31",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 15809.86
+        },
+        {
+          "test_start": "2026-09-08",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 19639.84
+        },
+        {
+          "test_start": "2026-09-15",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 24969.92
+        },
+        {
+          "test_start": "2026-09-23",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 30019.82
+        },
+        {
+          "test_start": "2026-09-30",
+          "params": {
+            "lookback": 24,
+            "entry_z": 1.5,
+            "exit_z": 0.5
+          },
+          "train_pnl": 24659.81
+        }
+      ],
+      "n_param_sets": 18,
+      "n_profitable_param_sets": 15,
+      "all_param_pnls": {
+        "{\"lookback\": 24, \"entry_z\": 1.0, \"exit_z\": 0.0}": -5740.0,
+        "{\"lookback\": 24, \"entry_z\": 1.0, \"exit_z\": 0.5}": 9379.76,
+        "{\"lookback\": 24, \"entry_z\": 1.5, \"exit_z\": 0.0}": -4699.99,
+        "{\"lookback\": 24, \"entry_z\": 1.5, \"exit_z\": 0.5}": 15009.85,
+        "{\"lookback\": 24, \"entry_z\": 2.0, \"exit_z\": 0.0}": -459.99,
+        "{\"lookback\": 24, \"entry_z\": 2.0, \"exit_z\": 0.5}": 13359.95,
+        "{\"lookback\": 48, \"entry_z\": 1.0, \"exit_z\": 0.0}": 2484.99,
+        "{\"lookback\": 48, \"entry_z\": 1.0, \"exit_z\": 0.5}": 15184.9,
+        "{\"lookback\": 48, \"entry_z\": 1.5, \"exit_z\": 0.0}": 5185.0,
+        "{\"lookback\": 48, \"entry_z\": 1.5, \"exit_z\": 0.5}": 20939.92,
+        "{\"lookback\": 48, \"entry_z\": 2.0, \"exit_z\": 0.0}": 2934.99,
+        "{\"lookback\": 48, \"entry_z\": 2.0, \"exit_z\": 0.5}": 8985.03,
+        "{\"lookback\": 96, \"entry_z\": 1.0, \"exit_z\": 0.0}": 5000.0,
+        "{\"lookback\": 96, \"entry_z\": 1.0, \"exit_z\": 0.5}": 9119.79,
+        "{\"lookback\": 96, \"entry_z\": 1.5, \"exit_z\": 0.0}": 3000.01,
+        "{\"lookback\": 96, \"entry_z\": 1.5, \"exit_z\": 0.5}": 13359.84,
+        "{\"lookback\": 96, \"entry_z\": 2.0, \"exit_z\": 0.0}": 839.99,
+        "{\"lookback\": 96, \"entry_z\": 2.0, \"exit_z\": 0.5}": 7675.03
+      }
+    },
+    "Momentum": {
+      "naive": {
+        "net_pnl": -1549.94,
+        "gross_pnl": 500.06,
+        "costs": 2050.0,
+        "contracts_traded": 164,
+        "sharpe": -1.48,
+        "max_drawdown": -5559.94,
+        "pct_days_positive": 20.5,
+        "n_days": 39
+      },
+      "in_sample": {
+        "net_pnl": -965.04,
+        "gross_pnl": 1429.96,
+        "costs": 2395.0,
+        "contracts_traded": 162,
+        "sharpe": -1.0,
+        "max_drawdown": -5120.03,
+        "pct_days_positive": 20.5,
+        "n_days": 39
+      },
+      "out_of_sample": {
+        "net_pnl": -965.04,
+        "gross_pnl": 1429.96,
+        "costs": 2395.0,
+        "contracts_traded": 162,
+        "sharpe": -1.0,
+        "max_drawdown": -5120.03,
+        "pct_days_positive": 20.5,
+        "n_days": 39
+      },
+      "strict_data_out_of_sample": {
+        "net_pnl": 1115.0,
+        "gross_pnl": 3760.0,
+        "costs": 2645.0,
+        "contracts_traded": 174,
+        "sharpe": 1.35,
+        "max_drawdown": -3345.01,
+        "pct_days_positive": 30.8,
+        "n_days": 39
+      },
+      "per_instrument": {
+        "X26-Z26": {
+          "net_pnl": 700.0,
+          "valid_hours": 1120
+        },
+        "Z26-F27": {
+          "net_pnl": -2075.02,
+          "valid_hours": 865
+        },
+        "F27-G27": {
+          "net_pnl": -430.0,
+          "valid_hours": 400
+        },
+        "G27-H27": {
+          "net_pnl": 0.0,
+          "valid_hours": 244
+        },
+        "X26/Z26/F27 fly": {
+          "net_pnl": 839.99,
+          "valid_hours": 865
+        },
+        "Z26/F27/G27 fly": {
+          "net_pnl": 0.0,
+          "valid_hours": 400
+        },
+        "F27/G27/H27 fly": {
+          "net_pnl": 0.0,
+          "valid_hours": 234
+        }
+      },
+      "net_pnl_by_cost_multiplier": {
+        "0.5": 232.46,
+        "1": -965.04,
+        "1.5": -2162.54,
+        "2": -3360.04,
+        "3": -5755.04
+      },
+      "hindsight_params": {
+        "lookback": 48,
+        "threshold": 1.0
+      },
+      "walk_forward_choices": [
+        {
+          "test_start": "2026-08-14",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": 279.99
+        },
+        {
+          "test_start": "2026-08-23",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": 279.99
+        },
+        {
+          "test_start": "2026-08-31",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": -100.01
+        },
+        {
+          "test_start": "2026-09-08",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": 949.99
+        },
+        {
+          "test_start": "2026-09-15",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": -880.03
+        },
+        {
+          "test_start": "2026-09-23",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": -3030.02
+        },
+        {
+          "test_start": "2026-09-30",
+          "params": {
+            "lookback": 48,
+            "threshold": 1.0
+          },
+          "train_pnl": -895.04
+        }
+      ],
+      "n_param_sets": 12,
+      "n_profitable_param_sets": 0,
+      "all_param_pnls": {
+        "{\"lookback\": 6, \"threshold\": 0.0}": -202529.25,
+        "{\"lookback\": 6, \"threshold\": 0.5}": -130429.63,
+        "{\"lookback\": 6, \"threshold\": 1.0}": -45304.92,
+        "{\"lookback\": 12, \"threshold\": 0.0}": -185580.23,
+        "{\"lookback\": 12, \"threshold\": 0.5}": -86764.99,
+        "{\"lookback\": 12, \"threshold\": 1.0}": -23434.96,
+        "{\"lookback\": 24, \"threshold\": 0.0}": -161074.73,
+        "{\"lookback\": 24, \"threshold\": 0.5}": -48984.89,
+        "{\"lookback\": 24, \"threshold\": 1.0}": -6145.08,
+        "{\"lookback\": 48, \"threshold\": 0.0}": -125514.83,
+        "{\"lookback\": 48, \"threshold\": 0.5}": -19419.97,
+        "{\"lookback\": 48, \"threshold\": 1.0}": -965.04
+      }
+    },
+    "ML ranking": {
+      "naive": {
+        "net_pnl": 20904.97,
+        "gross_pnl": 31229.97,
+        "costs": 10325.0,
+        "contracts_traded": 826,
+        "sharpe": 8.36,
+        "max_drawdown": -4229.99,
+        "pct_days_positive": 66.7,
+        "n_days": 39
+      },
+      "in_sample": {
+        "net_pnl": 20604.96,
+        "gross_pnl": 34699.96,
+        "costs": 14095.0,
+        "contracts_traded": 822,
+        "sharpe": 5.47,
+        "max_drawdown": -5580.03,
+        "pct_days_positive": 61.5,
+        "n_days": 39
+      },
+      "out_of_sample": {
+        "net_pnl": 10765.0,
+        "gross_pnl": 25960.0,
+        "costs": 15195.0,
+        "contracts_traded": 894,
+        "sharpe": 2.7,
+        "max_drawdown": -4815.02,
+        "pct_days_positive": 53.8,
+        "n_days": 39
+      },
+      "strict_data_out_of_sample": {
+        "net_pnl": -11094.93,
+        "gross_pnl": -1239.93,
+        "costs": 9855.0,
+        "contracts_traded": 630,
+        "sharpe": -6.18,
+        "max_drawdown": -11619.92,
+        "pct_days_positive": 30.8,
+        "n_days": 39
+      },
+      "per_instrument": {
+        "X26-Z26": {
+          "net_pnl": -2329.99,
+          "valid_hours": 1120
+        },
+        "Z26-F27": {
+          "net_pnl": -2239.96,
+          "valid_hours": 865
+        },
+        "F27-G27": {
+          "net_pnl": 6770.0,
+          "valid_hours": 400
+        },
+        "G27-H27": {
+          "net_pnl": -1654.99,
+          "valid_hours": 244
+        },
+        "X26/Z26/F27 fly": {
+          "net_pnl": -1439.98,
+          "valid_hours": 865
+        },
+        "Z26/F27/G27 fly": {
+          "net_pnl": 6769.94,
+          "valid_hours": 400
+        },
+        "F27/G27/H27 fly": {
+          "net_pnl": 4889.99,
+          "valid_hours": 234
+        }
+      },
+      "net_pnl_by_cost_multiplier": {
+        "0.5": 18362.5,
+        "1": 10765.0,
+        "1.5": 3167.5,
+        "2": -4430.0,
+        "3": -19625.0
+      },
+      "in_sample_r2": 0.209,
+      "folds": [
+        {
+          "test_start": "2026-08-14",
+          "train_rows": 663,
+          "pred_vs_actual_corr": 0.502
+        },
+        {
+          "test_start": "2026-08-23",
+          "train_rows": 934,
+          "pred_vs_actual_corr": 0.271
+        },
+        {
+          "test_start": "2026-08-31",
+          "train_rows": 1308,
+          "pred_vs_actual_corr": 0.148
+        },
+        {
+          "test_start": "2026-09-08",
+          "train_rows": 1736,
+          "pred_vs_actual_corr": 0.331
+        },
+        {
+          "test_start": "2026-09-15",
+          "train_rows": 2330,
+          "pred_vs_actual_corr": 0.397
+        },
+        {
+          "test_start": "2026-09-23",
+          "train_rows": 2972,
+          "pred_vs_actual_corr": 0.071
+        },
+        {
+          "test_start": "2026-09-30",
+          "train_rows": 3558,
+          "pred_vs_actual_corr": null
+        }
+      ],
+      "feature_importance": {
+        "ret_1h": 0.072,
+        "ret_3h": 0.156,
+        "ret_6h": 0.083,
+        "ret_24h": 0.091,
+        "z_24h": 0.249,
+        "z_72h": 0.066,
+        "vol_24h": 0.283,
+        "is_fly": 0.0
+      }
+    }
+  }
+}

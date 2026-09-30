@@ -1,0 +1,6 @@
+# research + tests: data download, charts, test runner
+-r requirements.txt
+yfinance==0.2.66
+matplotlib==3.10.6
+pytest>=8
+httpx>=0.27
